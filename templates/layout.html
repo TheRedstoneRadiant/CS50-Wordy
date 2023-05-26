@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}"
+    />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+
+    <title>{% block title %}{% endblock %} - CS50 Wordy</title>
+    {% endblock %}
+  </head>
+  <body>
+    <!-- Nav bar -->
+    <nav>
+      <div class="logo">
+        <a href="/"><h1>CS50 Wordy</h1></a>
+      </div>
+      <div class="buttons">
+        <a href="/5_letters">5-Letters</a>
+        <a href="/6_letters">6-Letters</a>
+        <a href="/7_letters">7-Letters</a>
+      </div>
+    </nav>
+  
+    <!-- Main page content -->
+    <main>
+      {% block main %}{% endblock %}
+    </main>
+  </body>
+</html>

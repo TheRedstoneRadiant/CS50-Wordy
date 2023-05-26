@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}How to Play{% endblock %}
+
+{% block main %}
+
+<h2 class="rules">How To Play</h2>
+<h3 class="rules">Welcome to CS50 Wordy! The rules are simple: pick a difficulty you want to play and try guessing the random word! After each guess color indicators will appear providing you information to guess the random word. You have 6 tries to guess the word. Good luck!</h3>
+<h4 class="rules-green"><span class="green-text">Green:</span> <span class="rules">This letter is in the correct place of the random word.</span></h4>
+<h4 class="rules-orange"><span class="orange-text">Orange:</span> <span class="rules">This letter exists, but is currently in the wrong place of the random word.</span></h4>
+<h4 class="rules-none">No changes in color: The letter does not exist in the random word.</h4>
+
+{% endblock %}
