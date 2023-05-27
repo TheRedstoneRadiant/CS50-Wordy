@@ -7,11 +7,6 @@ This is [@TheRedstoneRadiant](https://github.com/TheRedstoneRadiant) and [@Atapa
 ## Live Demo: https://cs50-wordy.redstoneradiant.repl.co
 ## Video Demo: https://www.youtube.com/watch?v=df3imK0LEu8
 
-<a href="https://www.youtube.com/watch?feature=player_embedded&v=df3imK0LEu8" target="_blank">
- <img src="https://img.youtube.com/vi/df3imK0LEu8/mqdefault.jpg" alt="Watch the video" />
-</a>
-
-
 ## Project Description
 
 Our final project to conclude CS50x is a web based game called 'Wordy', similar to the [New York Times Wordle game](https://www.nytimes.com/games/wordle/index.html). 
