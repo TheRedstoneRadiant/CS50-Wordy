@@ -12,8 +12,7 @@ Our final project to conclude CS50x is a web based game called 'Wordy', similar 
 (https://www.nytimes.com/games/wordle/index.html) game. 
 Unlike Wordle, Wordy offers the player to choose between a 5-letter, 6-letter, or 7-letter game. 
 
-Depending on the player's choice, a random word is loaded from the according dictionary, which the player will have to guess. The player inputs their valid guess, and after each guess, color indicators will
-appear providing the player information for the next guess. 
+Depending on the player's choice, a random word is loaded from the according dictionary, which the player will have to guess. The player inputs their valid guess, and after each guess, color indicators will appear providing the player information for the next guess. 
 
 - A green tile indicates that the guessed letter is in the correct place of the random word.
 - An orange tile indicates that the letter exists, but in a different place of the random word. 
@@ -37,4 +36,4 @@ cd CS50-Wordle
 python3 -m pip install -r requirements.txt
 ```
 
-Run `./run.sh` OR `./debug.sh`
+To run the application, execute `./run.sh` or `./debug.sh`.

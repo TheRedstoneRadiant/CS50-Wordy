@@ -108,10 +108,13 @@ const updateLetter = (charElement, i) => {
 
   if (guessWord[i] == charValue) {
     charElement.classList.add("valid-guess");
+    document.getElementById(charValue).classList.add("valid-guess");
   } else if (guessWord.includes(charValue)) {
     charElement.classList.add("partial-guess");
+    document.getElementById(charValue).classList.add("partial-guess");
   } else {
     charElement.classList.add("invalid-guess");
+    document.getElementById(charValue).classList.add("invalid-guess");
   }
 };
 

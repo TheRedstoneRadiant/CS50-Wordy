@@ -39,17 +39,17 @@
 }
 
 .invalid-guess {
-  background-color: #3a3a3c;
+  background-color: #3a3a3c !important;
   border-color: #3a3a3c;
 }
 
 .partial-guess {
-  background-color: #b59f3b;
+  background-color: #b59f3b !important;
   border-color: #b59f3b;
 }
 
 .valid-guess {
-  background-color: #538d4e;
+  background-color: #538d4e !important;
   border-color: #538d4e;
 }
 
