@@ -30,7 +30,7 @@ def verify_word(length):
     elif not request.args.get("word").isalpha() or len(request.args.get("word")) != length:
         return "Invalid word!", 400
 
-    return word_exists(request.args.get("word"), length)
+    return word_exists(request.args.get("word").lower(), length)
 
 
 if __name__ == "__main__":

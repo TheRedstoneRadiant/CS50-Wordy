@@ -70,8 +70,6 @@ const handleSubmit = () => {
     console.log(result);
   })
 
-  
-
   if (result) {
     // Valid word
   }
