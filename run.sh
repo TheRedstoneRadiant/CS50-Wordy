@@ -1,1 +1,1 @@
-python3 -m flask --app main.py
+python3 main.py
