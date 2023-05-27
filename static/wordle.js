@@ -103,6 +103,18 @@ const endGame = (win) => {
   wordResult.innerHTML = `The word was: ${guessWord.toUpperCase()}`;
 };
 
+const updateLetter = (charElement, i) => {
+  const charValue = charElement.innerHTML.toLowerCase();
+  
+  if (guessWord[i] == charValue) {
+    charElement.classList.add("valid-guess");
+  } else if (guessWord.includes(charValue)) {
+    charElement.classList.add("partial-guess");
+  } else {
+    charElement.classList.add("invalid-guess");
+  }
+}
+
 const handleSubmit = () => {
   if (currentChar < charCount) {
     shakeRow();
@@ -126,7 +138,7 @@ const handleSubmit = () => {
       renderError("Not in word list");
     } else {
       blockInput = true;
-      
+
       currentRow += 1;
       currentChar = 0;
 
@@ -138,19 +150,10 @@ const handleSubmit = () => {
         }
 
         const charElement = charElementsInRow[i];
-        const charValue = charElement.innerHTML.toLowerCase();
 
         charElement.classList.add("flip");
 
-        setTimeout(() => {
-          if (guessWord[i] == charValue) {
-            charElement.classList.add("valid-guess");
-          } else if (guessWord.includes(charValue)) {
-            charElement.classList.add("partial-guess");
-          } else {
-            charElement.classList.add("invalid-guess");
-          }
-        }, 250);
+        setTimeout(updateLetter, 250, charElement, i);
         i += 1;
       };
 
