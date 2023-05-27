@@ -1,20 +1,21 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block head %} {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='wordle.css') }}" />
+<script>
+  let charCount = parseInt("{{ length }}");
+</script>
 
-{% block head %}
-  {{ super() }}
-  <link rel="stylesheet" href="{{ url_for('static', filename='wordle.css') }}">
-  <script>
-    let charCount = parseInt('{{ length }}');
-  </script>
+<script src="{{ url_for('static', filename='wordle.js') }}" defer></script>
+{% endblock %} {% block title %}{{ length }} letters{% endblock %} {% block main
+%}
 
-  <script src="{{ url_for('static', filename='helpers.js') }}"></script>
-  <script src="{{ url_for('static', filename='wordle.js') }}" defer></script>
-{% endblock %}
-
-{% block title %}{{ length }} letters{% endblock %}
-
-{% block main %}
-
+<span id="error" class="error"></span>
 <div id="wordle" class="wordle"></div>
+<div id="gameOver">
+  <div class="popupResult">
+    <h1 id="gameResult">You win!</h1>
+    <p id="wordResult"></p>
+    <button onclick="window.location.reload();">Play again?</button>
+  </div>
+</div>
 
 {% endblock %}

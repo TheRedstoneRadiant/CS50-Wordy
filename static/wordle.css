@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 
 .row {
@@ -21,7 +22,7 @@
   height: 60px;
   border: 2px var(--fg-light) solid;
   color: var(--neutral);
-  
+
   /* Center horizontally and vertically */
   display: flex;
   justify-content: center;
@@ -37,17 +38,118 @@
   animation: pop 0.1s forwards;
 }
 
+.invalid-guess {
+  background-color: #3a3a3c;
+  border-color: #3a3a3c;
+}
+
+.partial-guess {
+  background-color: #b59f3b;
+  border-color: #b59f3b;
+}
+
+.valid-guess {
+  background-color: #538d4e;
+  border-color: #538d4e;
+}
+
 @keyframes pop {
   0% {
     transform: scale(1);
   }
-  
+
   50% {
     transform: scale(1.1);
   }
-  
+
   100% {
     transform: scale(1);
   }
 }
 
+main {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    margin-top: 10px;
+  }
+
+  .error {
+    margin-top: 50px;
+  }
+}
+
+.error {
+  font-weight: bold;
+  margin-bottom: 50px;
+  opacity: 0;
+  color: black;
+  border-radius: 5px;
+  padding: 13px 18px;
+  transition: all 1s ease;
+  background-color: white;
+  height: 20px;
+}
+
+.error.visible {
+  opacity: 1;
+}
+
+#gameOver {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+}
+
+#gameOver.visible {
+  display: grid;
+  visibility: unset;
+  opacity: 1;
+}
+
+.popupResult {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  width: 350px;
+  height: 200px;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.popupResult > button {
+  margin-left: auto;
+  cursor: pointer;
+  border: none;
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  padding: 0px 10px;
+  width: 120px;
+  height: 40px;
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+  transition: 2s all ease;
+}
+
+.popupResult > button:hover {
+  filter: brightness(120%);
+}
+
+#gameResult {
+  margin: 0;
+  font-size: 40px;
+}

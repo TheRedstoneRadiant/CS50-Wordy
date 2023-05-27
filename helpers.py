@@ -7,7 +7,7 @@ word_lengths = [5, 6, 7]
 
 def get_word(length):
     with open(f"datasets/words_{length}.txt", "r") as output:
-        words = output.readlines()
+        words = output.read().splitlines()
         random_index = random.randint(0, len(words) - 1)
         word_to_guess = words[random_index]
 
@@ -19,7 +19,7 @@ def word_exists(word, length):
     Check if word exists in file
     """
     with open(f"datasets/words_{length}.txt", "r") as output:
-        words = output.readlines()
+        words = output.read().splitlines()
     
     return word in words
 

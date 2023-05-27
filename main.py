@@ -23,6 +23,9 @@ def random_word(length):
 @app.route("/word_exists/<length>")
 @length_check
 def verify_word(length):
+    # Convert length parameter to int
+    length = int(length)
+
     if not request.args.get("word"):
         return "Please supply 'word' URL parameter!", 400
     
@@ -30,7 +33,7 @@ def verify_word(length):
     elif not request.args.get("word").isalpha() or len(request.args.get("word")) != length:
         return "Invalid word!", 400
 
-    return word_exists(request.args.get("word").lower(), length)
+    return str(word_exists(request.args.get("word").lower(), length))
 
 
 if __name__ == "__main__":
