@@ -1,6 +1,6 @@
 # CS50 Wordy
 
-This is [@TheRedstoneRadiant](https://github.com/TheRedstoneRadiant) and [@Atapa1908](Atapa1908)'s final project for [Harvard's CS50x](https://cs50.harvard.edu/x).
+This is [@TheRedstoneRadiant](https://github.com/TheRedstoneRadiant) and [@Atapa1908](https://github.com/Atapa1908)'s final project for [Harvard's CS50x](https://cs50.harvard.edu/x).
 
 <a href="https://cs50-wordy.redstoneradiant.repl.co"><img src="https://i.imgur.com/gmVfFOR.png" alt="CS50 Wordy" width="600"></a>
 
