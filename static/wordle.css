@@ -114,9 +114,23 @@ main {
 }
 
 #gameOver.visible {
+  animation: visibleGrid 2s ease;
   display: grid;
   visibility: unset;
   opacity: 1;
+}
+
+@keyframes visibleGrid {
+  0% {
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+  }
+  100% {
+    display: grid;
+    visibility: unset;
+    opacity: 1;
+  }
 }
 
 .popupResult {

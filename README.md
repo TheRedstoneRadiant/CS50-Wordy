@@ -16,7 +16,8 @@ random word.
 The website https://favicon.io has been consulted to generate the favicon utilized for this project.
 
 # Web Development
-The web framework, Flask, was utilized to build web applications, handling routing, managing HTTP requests and responses, and rendering HTML templates. 
+The web framework, Flask, was utilized to build web applications, handling routing, managing HTTP requests and
+responses, and rendering HTML templates. 
 
 # Setup
 
