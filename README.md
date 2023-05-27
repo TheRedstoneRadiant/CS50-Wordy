@@ -1,6 +1,6 @@
 # CS50 Wordy
 
-This is @TheRedstoneRadiant and @Atapa1908's final project for [Harvard's CS50](https://cs50.harvard.edu).
+This is [@TheRedstoneRadiant](https://github.com/TheRedstoneRadiant) and [@Atapa1908](Atapa1908)'s final project for [Harvard's CS50](https://cs50.harvard.edu).
 
 # Setup
 
