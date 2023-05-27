@@ -63,8 +63,14 @@ const handleSubmit = () => {
     word += charElement.innerHTML;
   }
 
-  const result = verifyWordExists(word);
-  console.log(result);
+  let result;
+
+  verifyWordExists(word).then(wordExists => {
+    result = wordExists;
+    console.log(result);
+  })
+
+  
 
   if (result) {
     // Valid word
