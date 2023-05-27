@@ -210,6 +210,44 @@ main {
   font-size: 12px;
 }
 
-#Enter, #Backspace {
+#Enter,
+#Backspace {
   width: 66px;
+}
+
+@media (max-width: 570px) {
+  .char {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .wordle {
+    height: 300px;
+  }
+
+  .keyboard {
+    width: 310px;
+    height: 115px;
+  }
+
+  .keyboardRow > button {
+    width: 26px;
+    height: 35px;
+    font-size: 11px;
+  }
+
+  #Enter,
+  #Backspace {
+    width: 43px;
+  }
+
+  #Enter {
+    font-size: 7px;
+  }
+
+  .error {
+    padding: 10px 18px 6px 18px;
+    font-size: 13px;
+  }
 }
