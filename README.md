@@ -2,6 +2,9 @@
 
 This is [@TheRedstoneRadiant](https://github.com/TheRedstoneRadiant) and [@Atapa1908](Atapa1908)'s final project for [Harvard's CS50x](https://cs50.harvard.edu/x).
 
+<img src="https://i.imgur.com/gmVfFOR.png" alt="CS50 Wordy" width="600">
+
+## Live Demo: https://cs50-wordy.redstoneradiant.repl.co
 ## Video Demo: <>
 
 ## Project Description
