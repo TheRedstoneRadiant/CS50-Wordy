@@ -1,13 +1,52 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block head %} {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='wordle.css') }}" />
 
-{% block title %}How to Play{% endblock %}
+{% endblock %} {% block title %}How to Play{% endblock %} {% block main %}
 
-{% block main %}
-
-<h2 class="rules">How To Play</h2>
-<h3 class="rules">Welcome to CS50 Wordy! The rules are simple: pick a difficulty you want to play and try guessing the random word! After each guess color indicators will appear providing you information to guess the random word. You have 6 tries to guess the word. Good luck!</h3>
-<h4 class="rules-green"><span class="green-text">Green:</span> <span class="rules">This letter is in the correct place of the random word.</span></h4>
-<h4 class="rules-orange"><span class="orange-text">Orange:</span> <span class="rules">This letter exists, but is currently in the wrong place of the random word.</span></h4>
-<h4 class="rules-none">No changes in color: The letter does not exist in the random word.</h4>
+<div class="rules">
+  <h1>How To Play</h1>
+  <h3>Welcome to CS50 Wordy!</h3>
+  <h4>
+    The rules are simple:<br /><br />Pick a difficulty you want to play and try
+    guessing the random word.
+  </h4>
+  <h4>
+    After each guess color indicators will appear providing you information to
+    guess the random word. You have 6 tries to guess the word. Good luck!
+  </h4>
+  <h4>
+    <div class="row row-demo">
+      <div class="char char-demo valid-guess flip">W</div>
+      <div class="char char-demo">E</div>
+      <div class="char char-demo">A</div>
+      <div class="char char-demo">R</div>
+      <div class="char char-demo">Y</div>
+    </div>
+    <span>This letter is in the correct place of the random word.</span>
+  </h4>
+  <h4>
+    <div class="row row-demo">
+      <div class="char char-demo">P</div>
+      <div class="char char-demo partial-guess flip">I</div>
+      <div class="char char-demo">L</div>
+      <div class="char char-demo">L</div>
+      <div class="char char-demo">S</div>
+    </div>
+    <span
+      >This letter exists, but is currently in the wrong place of the random
+      word.</span
+    >
+  </h4>
+  <h4>
+    <div class="row row-demo">
+      <div class="char char-demo">V</div>
+      <div class="char char-demo">A</div>
+      <div class="char char-demo">G</div>
+      <div class="char char-demo invalid-guess flip">U</div>
+      <div class="char char-demo">E</div>
+    </div>
+    <span>The letter does not exist in the random word.</span>
+  </h4>
+</div>
 
 {% endblock %}

@@ -16,7 +16,7 @@ appear providing the player information for the next guess.
 - An orange tile indicates that the letter exists, but in a different place of the random word. 
 
 ## Implemented Dictionaries
-
+The dictionary that was provided by CS50's 'Speller' assignment was programmatically filtered to create three separate dictionaries: `words_5.txt`, `words_6.txt`, and `words_7.txt` to be loaded when the player chooses a difficulty.
 
 ## Favicon
 The website https://favicon.io has been consulted to generate the favicon utilized for this project.

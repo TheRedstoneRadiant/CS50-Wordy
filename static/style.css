@@ -53,15 +53,30 @@ nav {
 }
 
 .rules {
-  color: #5a5ad1;
+  width: 400px;
+  color: var(--neutral);
+  background-color: black;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.rules-green, .rules-orange {
+.rules > * {
+  font-weight: normal;
+  margin: 10px;
+}
+
+.rules > h2 {
+  font-weight: bold;
+}
+
+.rules-green,
+.rules-orange {
   align-self: baseline;
 }
 
 .rules-none {
-  color: #5a5ad1;
   align-self: baseline;
 }
 
@@ -78,4 +93,15 @@ main {
   align-items: center;
   flex-direction: column;
   margin-top: 100px;
+}
+
+.char.char-demo {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.row.row-demo {
+  width: 50%;
+  margin-bottom: 10px;
 }
