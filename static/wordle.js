@@ -9,12 +9,12 @@ const getRandomWord = async (length) => {
   return await response.text();
 }
 
-// let guessWord;
+let guessWord;
 
-// // Fetch random guessWord
-// getRandomWord.then(randomWord => {
-//   guessWord = randomWord;
-// })
+// Fetch random guessWord
+getRandomWord(charCount).then(randomWord => {
+  guessWord = randomWord;
+})
 
 const renderRows = () => {
   const wordle = document.getElementById("wordle");
@@ -50,6 +50,11 @@ const getCurrentChar = (currentRow, currentChar) => {
   return rows[currentRow].querySelector(`#char${currentChar}`);
 }
 
+const verifyWordExists = async (word) => {
+  const response = await fetch(`/word_exists/${length}?word=${word}`);
+  return (await response.text()) === "true";
+}
+
 const handleSubmit = () => {
   let word = "";
 
@@ -58,7 +63,12 @@ const handleSubmit = () => {
     word += charElement.innerHTML;
   }
 
-  console.log(word);
+  const result = verifyWordExists(word);
+  console.log(result);
+
+  if (result) {
+    // Valid word
+  }
 }
 
 const handleBackspace = () => {
