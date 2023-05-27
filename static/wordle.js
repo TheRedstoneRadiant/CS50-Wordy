@@ -99,7 +99,7 @@ const endGame = (win) => {
   
   endGameElement.classList.add("visible");
   result.innerHTML = `You ${win ? "win" : "lose"}!`;
-  wordResult.innerHTML = `The word was: ${guessWord}`;
+  wordResult.innerHTML = `The word was: ${guessWord.toUpperCase()}`;
 };
 
 const handleSubmit = () => {
