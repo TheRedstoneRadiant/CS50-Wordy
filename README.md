@@ -5,9 +5,10 @@ This is [@TheRedstoneRadiant](https://github.com/TheRedstoneRadiant) and [@Atapa
 <a href="https://cs50-wordy.redstoneradiant.repl.co"><img src="https://i.imgur.com/gmVfFOR.png" alt="CS50 Wordy" width="600"></a>
 
 ## Live Demo: https://cs50-wordy.redstoneradiant.repl.co
-## Video Demo:
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=df3imK0LEu8" target="_blank">
- <img src="http://img.youtube.com/vi/df3imK0LEu8/mqdefault.jpg" alt="Watch the video" width="240" height="180" border="10" />
+## Video Demo: https://www.youtube.com/watch?v=df3imK0LEu8
+
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=df3imK0LEu8" target="_blank">
+ <img src="https://img.youtube.com/vi/df3imK0LEu8/mqdefault.jpg" alt="Watch the video" />
 </a>
 
 
