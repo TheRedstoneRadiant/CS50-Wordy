@@ -153,3 +153,19 @@ main {
   margin: 0;
   font-size: 40px;
 }
+
+.char.flip {
+  animation: flip ease-in 500ms;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+  }
+  50% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}

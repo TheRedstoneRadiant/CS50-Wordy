@@ -4,7 +4,8 @@ let rows = [];
 let currentRow = 0;
 let currentChar = 0;
 let errorTimeout;
-let gameOver;
+let blockInput;
+let revealInterval;
 
 const getRandomWord = async (length) => {
   const response = await fetch(`/random_word/${length}`);
@@ -96,7 +97,7 @@ const endGame = (win) => {
   const endGameElement = document.getElementById("gameOver");
   const result = document.getElementById("gameResult");
   const wordResult = document.getElementById("wordResult");
-  
+
   endGameElement.classList.add("visible");
   result.innerHTML = `You ${win ? "win" : "lose"}!`;
   wordResult.innerHTML = `The word was: ${guessWord.toUpperCase()}`;
@@ -124,29 +125,47 @@ const handleSubmit = () => {
       shakeRow();
       renderError("Not in word list");
     } else {
+      blockInput = true;
+      
       currentRow += 1;
       currentChar = 0;
 
-      for (let i = 0; i < charCount; i++) {
+      let i = 0;
+
+      const flipChar = () => {
+        if (i >= charCount - 1) {
+          clearInterval(revealInterval);
+        }
+
         const charElement = charElementsInRow[i];
         const charValue = charElement.innerHTML.toLowerCase();
 
-        if (guessWord[i] == charValue) {
-          charElement.classList.add("valid-guess");
-        } else if (guessWord.includes(charValue)) {
-          charElement.classList.add("partial-guess");
-        } else {
-          charElement.classList.add("invalid-guess");
-        }
-      }
+        charElement.classList.add("flip");
 
-      if (word === guessWord) {
-        gameOver = true;
-        endGame(true);
-      } else if (currentRow >= rowCount) {
-        gameOver = true;
-        endGame(false);
-      }
+        setTimeout(() => {
+          if (guessWord[i] == charValue) {
+            charElement.classList.add("valid-guess");
+          } else if (guessWord.includes(charValue)) {
+            charElement.classList.add("partial-guess");
+          } else {
+            charElement.classList.add("invalid-guess");
+          }
+        }, 250);
+        i += 1;
+      };
+
+      flipChar();
+      revealInterval = setInterval(flipChar, 250);
+
+      setTimeout(() => {
+        if (word === guessWord) {
+          endGame(true);
+        } else if (currentRow >= rowCount) {
+          endGame(false);
+        } else {
+          blockInput = false;
+        }
+      }, 250 * charCount);
     }
   });
 };
@@ -161,7 +180,7 @@ const handleBackspace = () => {
 };
 
 const keypress = (event) => {
-  if (gameOver) return;
+  if (blockInput) return;
 
   // Enter is pressed
   if (event.keyCode === 13) {
