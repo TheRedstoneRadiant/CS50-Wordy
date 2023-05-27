@@ -68,22 +68,12 @@
 }
 
 main {
-  margin-top: 50px;
-}
-
-@media screen and (max-width: 900px) {
-  main {
-    margin-top: 10px;
-  }
-
-  .error {
-    margin-top: 50px;
-  }
+  margin-top: 15px;
 }
 
 .error {
   font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   opacity: 0;
   color: black;
   border-radius: 5px;
@@ -182,4 +172,44 @@ main {
   100% {
     transform: rotateX(0);
   }
+}
+
+.keyboard {
+  margin-top: 20px;
+  width: 500px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.keyboardRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.keyboardRow:nth-child(2) {
+  width: 90%;
+}
+
+.keyboardRow > button {
+  width: 43px;
+  height: 58px;
+  background-color: #818384;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#Enter {
+  font-size: 12px;
+}
+
+#Enter, #Backspace {
+  width: 66px;
 }

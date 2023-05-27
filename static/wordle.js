@@ -105,7 +105,7 @@ const endGame = (win) => {
 
 const updateLetter = (charElement, i) => {
   const charValue = charElement.innerHTML.toLowerCase();
-  
+
   if (guessWord[i] == charValue) {
     charElement.classList.add("valid-guess");
   } else if (guessWord.includes(charValue)) {
@@ -113,7 +113,7 @@ const updateLetter = (charElement, i) => {
   } else {
     charElement.classList.add("invalid-guess");
   }
-}
+};
 
 const handleSubmit = () => {
   if (currentChar < charCount) {
@@ -186,12 +186,12 @@ const keypress = (event) => {
   if (blockInput) return;
 
   // Enter is pressed
-  if (event.keyCode === 13) {
+  else if (event.key === "Enter") {
     return handleSubmit();
   }
 
   // Backspace is pressed
-  else if (event.keyCode === 8 && currentChar > 0) {
+  else if (event.key === "Backspace" && currentChar > 0) {
     return handleBackspace();
   }
 
@@ -201,10 +201,10 @@ const keypress = (event) => {
   }
 
   // Ignore if ctrl or win key held
-  if (event.ctrlKey || event.metaKey) return;
+  else if (event.ctrlKey || event.metaKey) return;
 
   // Ignore non letter keypresses
-  if (!(event.key.length === 1 && event.key.match(/^[a-zA-Z]$/))) return;
+  else if (!(event.key.length === 1 && event.key.match(/^[a-zA-Z]$/))) return;
 
   const currentCharElement = getCurrentChar(currentRow, currentChar);
   currentChar += 1;
@@ -214,5 +214,23 @@ const keypress = (event) => {
   currentCharElement.classList.add("selected-char");
 };
 
+const simulateKeyPress = (event) => {
+  const key = event.target.id;
+
+  if (key === "Backspace") {
+    document.dispatchEvent(new KeyboardEvent("keydown", { key: "Backspace" }));
+  } else {
+    document.dispatchEvent(new KeyboardEvent("keydown", { key }));
+  }
+};
+
 document.body.onload = renderRows;
 document.addEventListener("keydown", keypress);
+
+// Keyboard logic
+const keyboardButtons = document.querySelectorAll(".keyboardRow > button");
+for (const keyboardButton of keyboardButtons) {
+  keyboardButton.addEventListener("click", simulateKeyPress);
+}
+
+document.querySelector("i").onclick = (e) => {e.target.parentElement.click()};
